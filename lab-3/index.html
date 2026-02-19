@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - CSS Structure and Properties</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Task 1: Image Preview CSS */
+        .image-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            border-top: 30px solid skyblue;
+            border-right: 30px solid lightpink;
+            border-bottom: 30px solid lightgreen;
+            border-left: 30px solid #ffefd5;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            display: block;
+        }
+
+        .image-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Task 2: Selector Specificity Test */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Selector Specificity Demo Styles */
+        p > span {
+            color: red;
+        }
+
+        #header span {
+            color: pink;
+        }
+
+        span {
+            color: green;
+        }
+
+        #header *:last-child {
+            color: orange;
+        }
+
+        #header span:first-child:hover {
+            color: blue;
+        }
+
+        #header span:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        p span:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .demo-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab 3: CSS Structure and Properties</h1>
+
+    <!-- Task 1: Image Preview with CSS -->
+    <section>
+        <h2>Task 1: Image Preview with CSS</h2>
+        <p>Using <code>.image-preview</code> class with descendant selectors to style the image:</p>
+        
+        <div class="image-preview">
+            <img src='https://cpit405.gitlab.io/images/KAU_logo.png' alt='KAU Logo'>
+        </div>
+    </section>
+
+    <!-- Task 2: CSS Selector Specificity -->
+    <section>
+        <h2>Task 2: CSS Selector Specificity and Priority</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Span Element</th>
+                    <th>Color</th>
+                    <th>Color When Mouse Over</th>
+                    <th>Explanation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>span.myclass1</td>
+                    <td><span style="color: pink;">pink</span></td>
+                    <td><span style="color: blue;">blue</span></td>
+                    <td>Normal: <code>#header span</code> (specificity: 101) matches, overrides <code>span</code> (1). On hover: <code>#header span:first-child:hover</code> (specificity: 103) applies.</td>
+                </tr>
+                <tr>
+                    <td>span.myclass2</td>
+                    <td><span style="color: pink;">pink</span></td>
+                    <td><span style="color: pink;">pink</span></td>
+                    <td><code>#header span</code> (specificity: 101) matches. No hover rule applies to this element.</td>
+                </tr>
+                <tr>
+                    <td>span.myclass3</td>
+                    <td><span style="color: orange;">orange</span></td>
+                    <td><span style="color: orange;">orange</span></td>
+                    <td>This is the last child inside #header, so <code>#header *:last-child</code> (specificity: 102) applies and is more specific than <code>#header span</code> (101).</td>
+                </tr>
+                <tr>
+                    <td>span.myclass4</td>
+                    <td><span style="color: red;">red</span></td>
+                    <td><span style="color: red;">red</span></td>
+                    <td>This span is inside &lt;p&gt;, not #header, so <code>p > span</code> (specificity: 2) matches. It's not affected by #header rules.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Live Demo -->
+    <section>
+        <h2>Live Interactive Demo</h2>
+        <p><em>Hover over the colored text below to see opacity changes:</em></p>
+        
+        <div id="header">
+            <p><span class="myclass1">Every</span> <span class="myclass2">one can</span> <span class="myclass3">success.</span></p>
+        </div>
+
+        <p style="margin-top: 15px;">One machine can do the work of fifty ordinary men.
+            <span class="myclass4">No machine can do the work of one extraordinary man.</span>
+        </p>
+    </section>
+
+    <footer style="text-align: center; margin-top: 40px; color: #999; font-size: 12px;">
+        <p>CPIT-405 Lab 3 - CSS Structure and Properties</p>
+        <p>King Abdulaziz University - Faculty of Computing and Information Technology</p>
+    </footer>
+</body>
+</html>
