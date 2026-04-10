@@ -3,14 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ibrahim-Aljohani</title>
+    <title>Ibrahim Aljohani | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
-  <body>
-    <p>Ibrahim 2236659</p>
-    <p>section: cpit 405</p>
-    <h2>labs</h2>
-    <a href="./lab-2/index.html"> lab-2</a>
-    <a href="./lab-3/index.html"> lab-3</a>
-    <a href="./lab-5/index.html"> lab-5</a>
+  <body class="bg-gray-900 text-white transition-colors duration-300">
+    <nav
+      class="fixed w-full z-50 backdrop-blur-lg bg-gray-900/90 border-b border-gray-800 transition-colors"
+    >
+      <div class="max-w-7xl mx-auto px-4 lg-px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="text-xl font-bold text-white nav-logo"
+              >Ibrahim Aljohani</a
+            >
+          </div>
+          <div class="flex items-center space-x-6">
+            <a href="contact.html" class="p-2 transition-colors nav-icon">✉️</a>
+            <a
+              href="https://github.com/ibrahimRabeh"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 transition-colors nav-icon"
+              >🐙</a
+            >
+            <a
+              href="https://linkedin.com/in/ibrahim-aljohany"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 transition-colors nav-icon"
+              >💼</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-4 lg-px-8 max-w-7xl mx-auto">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 3rem;
+          flex-wrap: wrap;
+        "
+      >
+        <a
+          href="index.html"
+          class="text-xl theme-li"
+          style="
+            color: #60a5fa;
+            text-decoration: none;
+            border-bottom: 2px solid #60a5fa;
+            font-weight: bold;
+          "
+          >Home</a
+        >
+        <a
+          href="cv.html"
+          class="text-xl theme-li"
+          style="text-decoration: none; font-weight: 500"
+          >CV</a
+        >
+        <a
+          href="projects.html"
+          class="text-xl theme-li"
+          style="text-decoration: none; font-weight: 500"
+          >Projects</a
+        >
+        <a
+          href="labs.html"
+          class="text-xl theme-li"
+          style="text-decoration: none; font-weight: 500"
+          >University Labs</a
+        >
+        <a
+          href="contact.html"
+          class="text-xl theme-li"
+          style="text-decoration: none; font-weight: 500"
+          >Contact</a
+        >
+      </div>
+
+      <section>
+        <div class="grid lg-grid-cols-2 gap-12 items-center">
+          <!-- Hero Text -->
+          <div class="space-y-8">
+            <h1 class="text-5xl lg-text-6xl font-bold">
+              Hello, I'm Ibrahim Aljohani
+              <div
+                class="flex items-center mt-2 min-h-[3rem] text-blue-400 theme-role-text"
+              >
+                <span id="typewriter-text"></span>
+                <span class="ml-1 animate-pulse">|</span>
+              </div>
+            </h1>
+            <p class="text-xl text-gray-300 theme-subtitle">
+              Transforming ideas into reality through code and cloud solutions.
+              Specializing in Flutter development and cloud engineering.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="projects.html"
+                class="btn-primary transform hover-scale-105"
+                >View Projects</a
+              >
+              <a
+                href="contact.html"
+                class="btn-secondary transform hover-scale-105"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+
+          <!-- Expertise Card -->
+          <div
+            class="relative p-8 rounded-2xl bg-gradient-br-gray-800-900 shadow-2xl theme-expertise-card"
+          >
+            <div class="absolute inset-0 bg-gradient-overlay rounded-2xl"></div>
+            <div class="text-blue-400 mb-6 text-4xl theme-expertise-icon">
+              💻
+            </div>
+            <h2 class="text-2xl font-bold mb-6 relative">
+              Technical Expertise
+            </h2>
+
+            <div class="grid grid-cols-2 gap-8 relative">
+              <div>
+                <h3 class="font-semibold mb-4">Languages</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚡</span> Java
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚡</span> Python
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚡</span> JavaScript
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚡</span> Dart
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚡</span> SQL
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-4">Tools & Technologies</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚙️</span> Git
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚙️</span> Docker
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚙️</span> Flutter
+                  </li>
+                  <li class="flex items-center text-gray-300 theme-li">
+                    <span class="mr-3 text-blue-400">⚙️</span> React
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="relative mt-8">
+              <a
+                href="cv.html"
+                style="color: #60a5fa; text-decoration: underline"
+                >View my full CV &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="theme-footer py-8 px-4 lg:px-8 text-center text-gray-400">
+      <p>© 2026 Ibrahim.dev. All rights reserved.</p>
+    </footer>
   </body>
 </html>

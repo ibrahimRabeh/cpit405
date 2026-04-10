@@ -1,0 +1,192 @@
+/* Reset & Base Settings */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bg-dark: #111827; /* gray-900 */
+  --bg-dark-secondary: #1f2937; /* gray-800 */
+  --text-dark: #fff;
+  --text-dark-muted: #d1d5db; /* gray-300 */
+  --text-dark-light: #9ca3af; /* gray-400 */
+  
+  --bg-light: #eff6ff; /* blue-50 */
+  --bg-light-secondary: #ffffff; /* white */
+  --text-light: #111827; /* gray-900 */
+  --text-light-muted: #4b5563; /* gray-600 */
+  --text-light-light: #6b7280; /* gray-500 */
+  
+  --primary-blue: #60a5fa; /* blue-400 */
+  --primary-indigo: #4f46e5; /* indigo-600 */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: var(--font-sans); 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex-grow: 1; }
+
+/* Dark / Light Toggle Base */
+body { background-color: var(--bg-light); color: var(--text-light); }
+body.dark { background-color: var(--bg-dark); color: var(--text-dark); }
+
+.nav-icon { color: #4b5563; }
+.nav-icon:hover { color: #4f46e5; }
+body.dark .nav-icon { color: #d1d5db; }
+body.dark .nav-icon:hover { color: #fff; }
+
+body.dark nav { background-color: rgba(17, 24, 39, 0.9); border-bottom: 1px solid #1f2937; }
+nav { background-color: rgba(255, 255, 255, 0.9); border-bottom: 1px solid #e0e7ff; }
+
+/* Utilities */
+.fixed { position: fixed; }
+.w-full { width: 100%; }
+.z-50 { z-index: 50; }
+.backdrop-blur-lg { backdrop-filter: blur(16px); }
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.h-16 { height: 4rem; }
+
+.pt-32 { padding-top: 8rem; }
+.pb-20 { padding-bottom: 5rem; }
+.gap-12 { gap: 3rem; }
+.grid { display: grid; }
+.space-y-8 > * + * { margin-top: 2rem; }
+.space-x-6 > * + * { margin-left: 1.5rem; }
+
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.text-center { text-align: center; }
+
+/* Media Queries used in original */
+@media (min-width: 1024px) {
+  .lg-px-8 { padding-left: 2rem; padding-right: 2rem; }
+  .lg-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg-text-6xl { font-size: 3.75rem; line-height: 1; }
+  .lg-flex-row { flex-direction: row; }
+}
+
+/* Background Gradients & Colors */
+.theme-role-text { color: var(--primary-indigo); background: linear-gradient(to right, #4f46e5, #7c3aed); -webkit-background-clip: text; color: transparent; }
+body.dark .theme-role-text { color: var(--primary-blue); background: none; -webkit-background-clip: border-box; }
+
+.theme-subtitle { color: var(--text-light-muted); }
+body.dark .theme-subtitle { color: var(--text-dark-muted); }
+
+.nav-logo { background: linear-gradient(to right, #4f46e5, #7c3aed); -webkit-background-clip: text; color: transparent; text-decoration: none; }
+body.dark .nav-logo { background: none; color: #fff; -webkit-background-clip: border-box; }
+
+/* Buttons */
+.btn-primary {
+  padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; text-decoration: none; display: inline-flex;
+  background: linear-gradient(to right, #4f46e5, #7c3aed); color: white; transition: transform 0.3s;
+}
+body.dark .btn-primary { background: linear-gradient(to right, #2563eb, #4f46e5); }
+.btn-primary:hover { transform: scale(1.05); }
+
+.btn-secondary {
+  padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; text-decoration: none; display: inline-flex;
+  background-color: white; color: #4f46e5; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transition: transform 0.3s;
+}
+body.dark .btn-secondary { background-color: #1f2937; color: white; }
+.btn-secondary:hover { transform: scale(1.05); }
+
+/* Expertise Card */
+.theme-expertise-card {
+  background-color: var(--bg-light-secondary); 
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); 
+  position: relative; padding: 2rem; border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+}
+body.dark .theme-expertise-card { 
+  background-color: var(--bg-dark-secondary); /* Pure consistent color instead of confusing dark grey gradients */
+  border: 1px solid #374151;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.bg-gradient-overlay {
+  background: linear-gradient(to bottom right, rgba(59,130,246,0.1), rgba(168,85,247,0.1));
+  pointer-events: none;
+}
+
+.theme-li { color: var(--text-light-muted); }
+body.dark .theme-li { color: var(--text-dark-muted); }
+
+/* Titles */
+.section-title {
+  background: linear-gradient(to right, #4f46e5, #7c3aed); -webkit-background-clip: text; color: transparent;
+}
+body.dark .section-title { background: none; color: #fff; -webkit-background-clip: border-box; }
+
+/* Project Cards */
+.project-card {
+  border-radius: 0.75rem; overflow: hidden; background-color: var(--bg-light-secondary);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex; flex-direction: column;
+}
+body.dark .project-card { background-color: var(--bg-dark-secondary); }
+.project-card:hover { transform: translateY(-0.5rem); }
+
+.card-image-container {
+  padding-top: 2rem; padding-bottom: 3rem; padding-left: 1rem; padding-right: 1rem;
+  position: relative;
+}
+/* The phone notch cutout */
+.phone-mockup {
+  position: relative; margin: 0 auto; width: 180px; height: 390px; border-radius: 2rem; background-color: black; padding: 0.5rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+.phone-notch {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 5rem; height: 1.5rem; background-color: black; border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem; z-index: 10;
+}
+.phone-img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 1.75rem;
+}
+
+/* Gradients for different card categories (React style translation) */
+.grad-amber { background: linear-gradient(to right, #f59e0b, #ea580c); }
+.grad-emerald { background: linear-gradient(to right, #10b981, #0d9488); }
+.grad-fuchsia { background: linear-gradient(to right, #c026d3, #7c3aed); }
+.grad-blue { background: linear-gradient(to right, #3b82f6, #0891b2); }
+.grad-purple { background: linear-gradient(to right, #9333ea, #db2777); }
+.grad-indigo { background: linear-gradient(to right, #4f46e5, #1d4ed8); }
+.grad-rose { background: linear-gradient(to right, #f43f5e, #dc2626); }
+
+/* Typography inside cards */
+.project-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--text-light); }
+body.dark .project-title { color: var(--text-dark); }
+
+.achievement-text { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+.achievement-green { color: #16a34a; }
+body.dark .achievement-green { color: #4ade80; }
+
+.pill-status {
+  display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;
+}
+.pill-purple { background-color: #f3e8ff; color: #7e22ce; }
+body.dark .pill-purple { background-color: rgba(88, 28, 135, 0.5); color: #d8b4fe; }
+
+.tag-pill {
+  display: inline-block; padding: 0.375rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; background-color: #e0e7ff; color: #3730a3; margin-right: 0.5rem; margin-bottom: 0.5rem;
+}
+body.dark .tag-pill { background-color: #374151; color: #d1d5db; }
+
+/* Contact section */
+.contact-container {
+  max-width: 42rem; margin: 0 auto; border-radius: 1rem; padding: 2rem; background-color: #ffffff; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+body.dark .contact-container { background-color: #1f2937; }
+
+/* Footer */
+.theme-footer { background-color: #e5e7eb; }
+body.dark .theme-footer { background-color: #1f2937; }

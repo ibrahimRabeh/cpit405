@@ -1,13 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NBA Stats</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 - JavaScript & Cookies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
   <!-- CPIT405 Universal Navigation Header inserted for consistency -->
   <header style="background: rgba(17, 24, 39, 0.9); padding: 1rem; border-bottom: 1px solid #1f2937; position: fixed; width: 100%; top: 0; left: 0; z-index: 100; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
     <div style="max-width: 80rem; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
@@ -20,35 +19,34 @@
 
   <!-- Wrapping Lab content with padding to prevent collision with fixed header -->
   <div style="padding-top: 5rem;">
-    <div class="container">
-      <header>
-        <h1>NBA Player Stats</h1>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-      </header>
+    <h1 class="lab-title">Lab 6</h1>
+    <h2 class="section-title">Like or dislike</h2>
 
-      <search class="table-filters">
-        <input type="text" id="search" placeholder="Search players..." />
-        <select id="team-filter">
-          <option value="all">All</option>
-          <!-- Teams will be populated in JS -->
-        </select>
-      </search>
-
-      <table id="player-stats">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Team</th>
-            <th>Points</th>
-            <th>Rebounds</th>
-            <th>Assists</th>
-          </tr>
-        </thead>
-        <tbody id="player-rows">
-          <!-- Rows will be populated in JS -->
-        </tbody>
-      </table>
+    <div class="vote-container">
+        <button id="like-btn" class="vote-btn">
+            <span>👍</span>
+            <span id="like-count" class="count">0</span>
+        </button>
+        <button id="dislike-btn" class="vote-btn">
+            <span>👎</span>
+            <span id="dislike-count" class="count">0</span>
+        </button>
     </div>
+
+    <div class="comments-section">
+        <h2>Comments</h2>
+        <textarea id="comment-input" placeholder="Write a comment..."></textarea>
+        
+        <div class="action-buttons">
+            <button id="submit-btn" class="btn">Submit</button>
+            <button id="clear-btn" class="btn">Clear</button>
+        </div>
+
+        <div id="comment-list" class="comment-list">
+            <!-- Comments will be injected here -->
+        </div>
+    </div>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
